@@ -1,0 +1,262 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body{
+  width: 100%;
+  height: 100%;
+}
+#main{
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+#left{
+ width: 30vw;
+ height: 100vh;
+ background-color: #212121;
+ padding: 2vw;
+ z-index: 99;
+}
+#upper-left{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* justify-content: space-around; */
+}
+
+#upper-left input{
+  padding: 0.7vw 3.5vw;
+  border-radius: 20px;
+  outline: none;
+}
+#chat-name{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1vw 0vw;
+  
+}
+#chat-name h1{
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.5vw;
+}
+#upper-left h2 i{
+  color: #fff;
+  font-weight: 200;
+  font-size: 1.6vw;
+}
+#upper-left input{
+  background-color: #181818;
+  border: 1px solid rgba(128, 128, 128, 0.284)
+}
+#upper-left input:hover{
+  border: 1px solid #9125e3;
+}
+#chat-name img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+#right{
+  width: 70vw;
+  height: 100vh;
+  background-color: #000000;
+}
+#upper-right{
+  width: 100%;
+  height: 10vh;
+  background-color: #212121;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw 2vw;
+}
+#upper-part1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+#upper-part1 h1{
+  color: #fff;
+  font-size: 1.6vw;
+}
+#upper-part1 img{
+  width: 44px;
+  height: 44px; 
+  border-radius: 50%;
+  background-color: red;
+}
+#chachi{ 
+  color: white;
+}
+#upper-part2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+#upper-part2 i{
+  color: #979797;
+  font-size: 1.6vw;
+}
+#conversation{
+  width: 100%;
+  height: 78vh;
+  background-color: #000000;
+  padding: 1vw 1.3vw;
+}
+#conversation #bhejnevala{
+  width: fit-content;
+  margin-left: auto;
+}
+#conversation #bhejnevala h2{
+ padding: 0.6vw 1.2vw;
+ background-color: #8774e1;
+ border-radius: 8px;
+ margin-bottom: 1vw;
+ color: #fff;
+ font-size: 1.4vw;
+ font-size: 400;
+}
+#conversation #aanevala h2{
+  width: fit-content;
+  padding: 0.6vw 1.2vw;
+  background-color: #8774e1;
+  border-radius: 4%;
+  margin-bottom: 1vw;
+  color: #fff;
+  font-size: 1.4vw;
+  font-size: 400;
+ }
+#btn{
+  gap: 10px;
+  width: 100%;
+  max-height: 22vh;
+  background-color:#000000;
+  display: flex;
+  align-items: center;
+}
+#btn input{
+  width: 30%;
+  margin-left: 15%;
+  padding: 1vw 5vw;
+  background-color: #212121;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  
+}
+#btn input[type="text"] {
+  flex: 1;
+}
+
+#uploadContainer {
+  margin-top: 5px; /* Adjust margin as needed */
+  color: #fff;
+  margin-left: 59vw;
+  position: absolute;
+}
+
+#uploadIcon {
+  display: block;
+  color: #979797;
+  
+}
+#btn button{
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  border: none;
+  background-color: #8774e1;
+  margin-right: 3vw;
+  /* padding: 1vw 2vw; */
+}
+#btn button i{
+  font-size: 1.8vw;
+  color: #e8e2e2;
+
+}
+#top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#mohit_buddhi_heen{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 40vw;
+  height: 50vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+#upper-left input{
+  color: #fff;
+}
+#box{
+  width: 20vw;
+  height: 20vw;
+  padding: 1vw;
+  /* display: none; */
+  z-index: 9999;
+  position: absolute;
+  color: #fff;
+
+  
+}
+#box-main{
+padding-top: 4vw;
+width: 15vw;
+height: 20vw;
+/* background-color: red;   */
+position: relative;  
+
+}
+#up{
+  width: 100%;
+  height: 20vh;
+  background-color: #0f0f0f;
+}
+#up h1{
+  font-size: 1.3vw;
+}
+#image{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #0f0f0f;
+  margin-bottom: 1vw;
+}
+#box2{
+  width: 100%;
+  height: 30vh;
+  background-color: #0f0f0f;
+  gap: 20px;
+}
+#up2{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: #0f0f0f;
+}
+#up2 i{
+  font-size: 1.3vw;
+}
+#up2 a{
+  text-decoration: none;
+ color: #fff;
+}
+#up2 h2{
+  font-size: 1.3vw;
+}

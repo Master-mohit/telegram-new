@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+        }
+        #main{
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #left{
+            width: 30vw;
+            height: 100%;
+            background-color: #2b2b2b;
+        }
+        #top{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8vw 1vw;
+            
+        }
+        #top i{
+            font-size: 1.7vw;
+            color: #6d6d6d;
+        }
+        #top #front{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+        #top #front2{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+        #middle{
+            width: 100%;
+            height: 15vw;
+            background-color: #212121;
+            text-align: center;
+            height: 1;
+            padding: 1vw 0vw;
+        }
+        #middle h1,h2{
+            font-size: 1.5vw;
+        }
+        #middle #image{
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background-color: red;
+            margin-left: 12vw;
+        }
+        #middel-down{
+            padding: 0.8vw 1vw;
+            background-color: #212121;
+            height: 6vw;
+            overflow: hidden;
+        }
+        #middel-down h2{
+            margin-bottom: 0.5vw;
+        }
+        #middel-down h2{
+            font-size: 1.2vw;
+            margin-bottom: -2vw;
+        }
+        #middel-down i{
+          font-size: 1.7vw;
+        }
+        #up1{
+            display: flex;
+          gap: 23px;
+          margin-bottom: 1vw;
+
+    
+        }
+        #up1 h2{
+            font-size: 1.4vw;
+        }
+        #line{
+            width: 100%;
+            height: 0.5vw;
+            background-color: black;
+            
+        }
+        #bottom{
+            padding: 0.8vw 1vw;
+            background-color:#212121;
+            height: 22.5vw;
+            overflow: hidden;
+            
+        }
+        #right{
+            width: 70%;
+            height: 100%;
+            background-color: #000000;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="main">
+   
+        <div id="left">
+            <div id="top">
+                <div id="front">
+                 <h1><i class="ri-arrow-left-line"></i></h1>
+                 <h2>Settings</h2>
+                </div>
+                <div id="front2">
+                 <a href="/pencil"><i class="ri-pencil-line"></i></a>
+                 <h1><i class="ri-more-2-line"></i></h1>
+                </div>
+             </div>
+             <div id="middle">\`
+                <div id="image"></div>
+                <h1><%= user.name %></h1>
+                <h2>online</h2>
+             </div>
+             <div id="middel-down">
+                <div id="up1">
+                    <i class="ri-phone-line"></i>
+                    <h2>+9179333570</h2>
+                </div>
+                <div id="up1">
+                    <i class="ri-error-warning-line"></i>
+                    <h2><%= user.bio %></h2>
+                </div>
+             </div>
+             <div id="line"></div>
+             <div id="bottom">
+                <div id="up1">
+                    <i class="ri-phone-line"></i>
+                    <h2>Notification and Sounds</h2>
+                </div>
+                <div id="up1">
+                    <i class="ri-database-2-line"></i>
+                    <h2>Data and Storage</h2>
+                </div>
+                <div id="up1">
+                    <i class="ri-lock-line"></i>
+                    <h2>Privacy and Security</h2>
+                </div>
+                <div id="up1">
+                    <i class="ri-settings-line"></i>
+                    <h2>General Settings</h2>
+                </div>
+                <div id="up1">
+                    <i class="ri-folder-line"></i>
+                    <h2>Chats Folders</h2>
+                </div>
+                <div id="up1">
+                    <i class="ri-emoji-sticker-line"></i>
+                    <h2>Stikers and Emoji</h2>
+                </div>
+                <div id="up1">
+                    <i class="ri-computer-line"></i>
+                    <h2>Devices</h2>
+                </div>
+                <div id="up1">
+                    <i class="ri-global-line"></i>
+                    <h2>Language</h2>
+                </div>
+             </div>
+    </div>
+    <div id="right"></div>
+    </div>
+</body>
+</html>

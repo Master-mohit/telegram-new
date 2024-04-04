@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Profile</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px ;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .form-group input[type="text"],
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: none;
+    }
+    .form-group button {
+        padding: 10px 20px;
+        background-color: #0088cc;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .form-group button:hover {
+        background-color: #005580;
+    }
+</style>
+</head>
+<body>
+<div class="container" >
+  <form action="/change" method="post">
+    <input type="text" name="name" placeholder="firstname"> 
+    <textarea name="bio"></textarea>
+    <input type="submit">
+  </form>
+  
+        
+</div>
+
+<script>
+    function saveChanges() {
+        var name = document.getElementById("name").value;
+        var lastName = document.getElementById("lastName").value;
+        var username = document.getElementById("username").value;
+        var bio = document.getElementById("bio").value;
+
+        // Here you can add code to send this data to the server for saving
+
+        alert("Changes saved successfully!");
+    }
+</script>
+</body>
+</html>

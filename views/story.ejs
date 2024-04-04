@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html, body{
+        width: 100%;
+        height: 100%;
+    }
+    #main{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #left{
+        width: 20vw;
+        height: 100%;
+        background-color: lightcoral;
+        padding: 2vw;
+    }
+    #upper{
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background-color: red;
+        overflow: hidden;
+    
+    }
+    #upper input{
+        margin-top: 3vw;
+    }
+
+    #right{
+        width: 80vw;
+        height: 100%;
+        background-color: rgb(72, 231, 93);
+    }
+</style>
+<body>
+   <div id="main">
+    <div id="left">
+        <h1>My Storyy</h1>
+     <div id="upper">
+        <form action="/photo" method="post" enctype="multipart/form-data">
+            <input type="file" name="image">
+            <input type="submit">
+        </form>
+     </div>
+    </div>
+    <div id="right">
+        <img src="/images/uploads/<%=user.profileImage %>" alt="">
+    </div>
+   </div>
+
+</body>
+</html>
