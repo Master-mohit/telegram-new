@@ -29,22 +29,35 @@
         padding: 2vw;
     }
     #upper{
-        width: 140px;
-        height: 140px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         background-color: red;
         overflow: hidden;
     
     }
     #upper input{
-        margin-top: 3vw;
+        margin-top: 1vw;
     }
-
+    
+    #left-box{
+        width: 15vw;
+        height: 25vw;
+        background-color: rgb(222, 47, 47);
+        margin-top: 3vw;
+        overflow: hidden;
+    }
+    #left-box{
+        object-fit: cover;
+       object-position: center;
+       -o-object-position: center;
+    }
     #right{
         width: 80vw;
         height: 100%;
-        background-color: rgb(72, 231, 93);
+        background-color: #000000;
     }
+    
 </style>
 <body>
    <div id="main">
@@ -53,12 +66,14 @@
      <div id="upper">
         <form action="/photo" method="post" enctype="multipart/form-data">
             <input type="file" name="image">
-            <input type="submit">
+            <input id="submit" type="submit">
         </form>
+     </div>
+     <div id="left-box">
+        <img src="/images/uploads/<%=user.profileImage %>" alt="">
      </div>
     </div>
     <div id="right">
-        <img src="/images/uploads/<%=user.profileImage %>" alt="">
     </div>
    </div>
 

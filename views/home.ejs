@@ -58,6 +58,15 @@
             <h2><i class="ri-menu-line"></i></h2>
             <input type="search" placeholder="Search">
           </div>
+           <!-- <div id="user">
+            <div id="pic">
+             <img src="" alt=""> 
+            </div>
+            <div id="username">
+              <h1>username</h1>
+            </div>
+          </div> -->
+          
           <div id="mainChats">
             <% logdinUser.friends.forEach(friend=>{ %>
           <div onclick="frdban('<%= friend.profileImage %>','<%= friend._id %>','<%= friend.username %>')" id="chat-name">
@@ -145,29 +154,6 @@
                 console.log("dekh")
             })
 
-            document.querySelector("#upper-left input").addEventListener("input", async function(event){
-             const data =  document.querySelector("#upper-left input").value
-             if(data==""){
-              return
-             }
-            const afterSreach =  await axios.post("/searchUser",{
-                 data:data
-            })
-
-            afterSreach.data.forEach(srchU =>{
-              daldoUSer(srchU.username, srchU.profileImage, srchU._id)
-            });
-
-            function daldoUSer(username, profileImage, id){
-const temp = `<div onclick="chatsOpen(event, '${id}', '${profileImage}', '${username}')" id="chat-name" id="${id}">
-
-            <img src="${profileImage}" alt="">
-            <h1>${username}</h1>
-          </div>`;
-          document.querySelector("#left").innerHTML += temp;
-            }
-            })
-
 
             async function chatsOpen(event, id, profileImage, username) {
     try {
@@ -210,6 +196,32 @@ click.addEventListener("click", function() {
     }
 });
  
+
+document.querySelector("#left #upper-left input").addEventListener("input", async function(event){
+    const value = document.querySelector("#left #upper-left input").value;
+    if(value == "") {
+        return;
+    }
+    try {
+        const response = await axios.post("/srchuser", {
+            value: value
+        });
+        document.querySelector("#left #mainChats").innerHTML = ""; // Clear previous search results
+        response.data.users.forEach(user => {
+            append(user.profileImage, user.username, user._id);
+        });
+    } catch (error) {
+        console.error('Error searching users:', error);
+    }
+});
+
+function append(profileImage, username, id){
+    const temp = `<div onclick="chatsOpen(event, '${id}', '${profileImage}', '${username}')" id="chat-name" id="${id}">
+        <img src="${profileImage}" alt="">
+        <h1>${username}</h1>
+    </div>`;
+    document.querySelector("#left #mainChats").innerHTML += temp;
+}
 
 
     </script>

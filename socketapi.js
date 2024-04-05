@@ -4,19 +4,14 @@ const socketapi = {
 };
 
 // Add your socket.io logic here!
-io.on( "connection", function( socket ) {
-    console.log( "A user connected" );
-
-    socket.on("sony", function(chacha){
-      console.log("chacha")
-
-      socket.broadcast.emit("max", chacha)
-
-      socket.on('newPhoto', function(data){
-            console.log("data")
-      });
-    })
+io.on('connection', (socket) => {
+  console.log('A user connected');
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+  socket.on('sony', (message) => {
+    console.log('Received message:', message);
+    io.emit('max', message); // Broadcast the message to all connected clients
+  });
 });
-// end of socket.io logic
-
 module.exports = socketapi;

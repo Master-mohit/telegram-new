@@ -69,28 +69,6 @@ const logdinUser = await userModel.findOne({username: req.session.passport.user}
   console.log(logdinUser);
 });
 
-router.post('/searchUser', async function(req, res, next) {
-  try {
-    const searchData = req.body.data;
-    if (typeof searchData !== 'string') {
-      return res.status(400).json({ error: 'Search data must be a string' });
-    }
-    
-    const searchedUsers = await userModel.find({
-      username: {
-        $regex: searchData,
-        $options: 'i'
-      }
-    });
-
-    console.log('Searched Users:', searchedUsers); // Log searched users
-
-    res.status(200).json(searchedUsers);
-  } catch (error) {
-    console.error('Error searching users:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
 
 router.post('/addfriend', async function(req, res, next) {
   try {
@@ -176,6 +154,23 @@ router.post('/upload', isLoggedIn, upload.single('photo'), async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+
+router.post('/srchuser', isLoggedIn, async function(req, res, next) {
+  try {
+      const value = req.body.value;
+      const users = await userModel.find({
+          username: {
+              $regex: value,
+              $options: "i"
+          }
+      });
+      res.json({ users: users }); // Sending users back to the client
+  } catch (error) {
+      console.error('Error searching users:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 
 // Other routes and middleware...
 
