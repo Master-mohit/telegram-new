@@ -12,147 +12,101 @@
     <div id="main">
         <div id="box">
             <div id="box-main">
-              <div id="up">
-                <div id="image">
-                    <img src="" alt="">
+                <div id="box2">
+                    <div id="up2">
+                        <h1><i class="ri-group-line"></i></h1>
+                        <h2>New group</h2>
+                    </div>
+                    <div id="up2">
+                        <h1><i class="ri-contacts-line"></i></h1>
+                        <h2>Contacts</h2>
+                    </div>
+                    <div id="up2">
+                      <h1><i class="ri-contacts-line"></i></h1>
+                     <a href="/story"><h2>Story</h2></a>
+                  </div>
+                    <div id="up2">
+                        <h1><i class="ri-phone-line"></i></h1>
+                        <h2>Calls</h2>
+                    </div>
+                    <div id="up2">
+                        <h1><i class="ri-team-fill"></i></h1>
+                        <h2>Prople Nearby</h2>
+                    </div>
+                    <div id="up2">
+                        <h1><i class="ri-chat-2-line"></i></h1>
+                        <h2>Saved Messages</h2>
+                    </div>
+                    
+                    <div id="up2">
+                      <h1><i class="ri-settings-3-line"></i></h1>
+                     <a href="/setting"><h2>Setting</h2></a>
+                  </div>
                 </div>
-                <h1>Mohit nougrahiya</h1>
-                <h1>9170====</h1>
-            </div>
-            <div id="box2">
-                <div id="up2">
-                    <h1><i class="ri-group-line"></i></h1>
-                    <h2>New group</h2>
-                </div>
-                <div id="up2">
-                    <h1><i class="ri-contacts-line"></i></h1>
-                    <h2>Contacts</h2>
-                </div>
-                <div id="up2">
-                  <h1><i class="ri-contacts-line"></i></h1>
-                 <a href="/story"><h2>Story</h2></a>
-              </div>
-                <div id="up2">
-                    <h1><i class="ri-phone-line"></i></h1>
-                    <h2>Calls</h2>
-                </div>
-                <div id="up2">
-                    <h1><i class="ri-team-fill"></i></h1>
-                    <h2>Prople Nearby</h2>
-                </div>
-                <div id="up2">
-                    <h1><i class="ri-chat-2-line"></i></h1>
-                    <h2>Saved Messages</h2>
-                </div>
-                
-                <div id="up2">
-                  <h1><i class="ri-settings-3-line"></i></h1>
-                 <a href="/setting"><h2>Setting</h2></a>
-              </div>
-            </div>
             </div>
         </div>
-      <div id="top">
-        <div id="left">
-          <div id="upper-left">
-            <h2><i class="ri-menu-line"></i></h2>
-            <input type="search" placeholder="Search">
-          </div>
-           <!-- <div id="user">
-            <div id="pic">
-             <img src="" alt=""> 
-            </div>
-            <div id="username">
-              <h1>username</h1>
-            </div>
-          </div> -->
-          
-          <div id="mainChats">
-            <% logdinUser.friends.forEach(friend=>{ %>
-          <div onclick="frdban('<%= friend.profileImage %>','<%= friend._id %>','<%= friend.username %>')" id="chat-name">
-            <img src="<%= friend.profileImage %>" alt="">
-            <h1><%= friend.username %></h1>
-          </div>
-          <% }) %>
-          
-        </div>
-        </div>
-        <div id="right">
-            <div id="upper-right">
-                <div id="upper-part1">
-                    <img src="" alt="">
-                    <h1 id="usernamePlaceholder">username</h1> 
+        <div id="top">
+            <div id="left">
+                <div id="upper-left">
+                    <h2><i class="ri-menu-line"></i></h2>
+                    <input type="search" placeholder="Search">
                 </div>
-                <div id="upper-part2">
-                    <h2><i class="ri-search-line"></i></h2>
-                    <h3><i class="ri-more-2-fill"></i></h3>
+                <div id="mainChats">
+                    <% logdinUser.friends.forEach(friend=>{ %>
+                    <div onclick="frdban('<%= friend.profileImage %>','<%= friend._id %>','<%= friend.username %>')" id="chat-name">
+                        <img src="<%= friend.profileImage %>" alt="">
+                        <h1><%= friend.username %></h1>
+                    </div>
+                    <% }) %>
                 </div>
             </div>
-            <div id="conversation">
-               <!-- <div id="bhejnevala">
-               <h2>heyy</h2>
-               </div> -->
-               <!-- <div id="aanevala">
-                <h2>hello</h2>
-               </div> -->
-            </div>
-            <div id="btn">
-
-                <input type="text" placeholder="Message">
-                <div id="uploadContainer">
-                 
-              </div>
-                <button onclick="btnn()"><i class="ri-send-plane-2-line"></i></button>
-                <form action="/upload" method="post" enctype="multipart/form-data">
-                  <input type="file" name="photo">
-                  <input type="submit" value="Upload">
-                </form>
-                
-                
+            <div id="right">
+                <div id="upper-right">
+                    <div id="upper-part1">
+                        <img src="" alt="">
+                        <h1 id="usernamePlaceholder"></h1>
+                    </div>
+                    <div id="upper-part2">
+                        <h2><i class="ri-search-line"></i></h2>
+                        <h3><i class="ri-more-2-fill"></i></h3>
+                    </div>
+                </div>
+                <div id="conversation"></div>
+                <div id="btn">
+                    <input type="text" id="messageInput" placeholder="Message">
+                    <div id="uploadContainer"></div>
+                    <button onclick="sendMessage()"><i class="ri-send-plane-2-line"></i></button>
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <input type="file" name="photo">
+                        <input type="submit" value="Upload">
+                    </form>
+                </div>
             </div>
         </div>
-      </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         var socket = io();
-
-        function btnn(){
-              const btndata =  document.querySelector("#btn input").value
-              const temp = `<div id="bhejnevala">
-               <h2>${btndata}</h2>
-               </div>`;
-               socket.emit("sony", btndata)
-               document.querySelector("#conversation").innerHTML += temp;
-               document.querySelector("#btn input").value = "";
-               console.log(btndata);
-            }
-
-          
-            function btnn(photo) { // Add photo as a parameter
-    const temp = `<div id="bhejnevala">
-      <h2>${photo}</h2>
-    </div>`;
-    socket.emit('newPhoto', { photo: photo }); // Emit the photo to the server
-    document.querySelector("#conversation").innerHTML += temp;
-    document.querySelector("#btn input").value = "";
-    console.log(photo);
-  }
-
-
-
-            function aanevalamess(nana){
-                const temp = `<div id="aanevala">
-                <h2>${nana}</h2>
-               </div>`;
-               document.querySelector("#conversation").innerHTML += temp;
-
-            }
-            socket.on("max", function(dekh){
-                aanevalamess(dekh)
-                console.log("dekh")
-            })
+    
+     
+        function sendMessage() {
+            const message = document.querySelector("#messageInput").value;
+            const messageDiv = `<div id="bhejnevala"><h2>${message}</h2></div>`;
+            socket.emit("message", message); 
+            document.querySelector("#conversation").innerHTML += messageDiv;
+            document.querySelector("#messageInput").value = "";
+        }
+    
+        
+        function aanevala(haa){
+            const messageDiv = `<div id="aanevala"><h2>${haa}</h2></div>`;
+            document.querySelector("#conversation").innerHTML += messageDiv;
+    }
+       socket.on("sony", function(hero){
+       aanevala(hero)
+        console.log(hero);
+      }) 
 
 
             async function chatsOpen(event, id, profileImage, username) {
@@ -181,12 +135,21 @@ function frdban(id, profileImage, username) {
     document.querySelector("#upper-right").innerHTML += temp; 
 }
 
+
 var box = document.querySelector("#box");
 var click = document.querySelector("#left #upper-left i");
 var dekh = false; 
 
+
+
+var box = document.querySelector("#box");
+var click = document.querySelector("#left #upper-left i");
+var dekh = false; 
+
+
 click.addEventListener("click", function() {
- console.log("oyee")
+    console.log("clicked");
+    
     if (!dekh) {
         box.style.display = "initial"; 
         dekh = true; 
@@ -195,35 +158,73 @@ click.addEventListener("click", function() {
         dekh = false; 
     }
 });
- 
 
-document.querySelector("#left #upper-left input").addEventListener("input", async function(event){
-    const value = document.querySelector("#left #upper-left input").value;
-    if(value == "") {
-        return;
+
+async function searchUsers() {
+    const searchValue = document.querySelector("#left #upper-left input").value.trim();
+    if (searchValue === "") {
+      return;
     }
     try {
-        const response = await axios.post("/srchuser", {
-            value: value
-        });
-        document.querySelector("#left #mainChats").innerHTML = ""; // Clear previous search results
-        response.data.users.forEach(user => {
-            append(user.profileImage, user.username, user._id);
-        });
+      const response = await axios.post("/srchuser", {
+        value: searchValue
+      });
+      renderSearchResults(response.data.users);
     } catch (error) {
-        console.error('Error searching users:', error);
+      console.error('Error searching users:', error);
     }
-});
-
-function append(profileImage, username, id){
-    const temp = `<div onclick="chatsOpen(event, '${id}', '${profileImage}', '${username}')" id="chat-name" id="${id}">
-        <img src="${profileImage}" alt="">
-        <h1>${username}</h1>
-    </div>`;
-    document.querySelector("#left #mainChats").innerHTML += temp;
-}
+  }
 
 
+  function renderSearchResults(users) {
+    const mainChats = document.querySelector("#left #mainChats");
+    mainChats.innerHTML = ""; 
+    users.forEach(user => {
+      const chatName = document.createElement("div");
+      chatName.id = "chat-name";
+      chatName.onclick = function() {
+        addFriend(user._id, user.profileImage, user.username);
+      };
+      chatName.innerHTML = `
+        <img src="${user.profileImage}" alt="">
+        <h1>${user.username}</h1>
+      `;
+      mainChats.appendChild(chatName);
+    });
+  }
+  async function addFriend(id, profileImage, username) {
+    try {
+      const response = await axios.post("/addfriend", {
+        friendId: id
+      });
+      console.log(response.data.message);
+      appendFriend(profileImage, username, id);
+    } catch (error) {
+      console.error('Error adding friend:', error);
+    }
+  }
+
+  function appendFriend(profileImage, username, id) {
+    const upperRight = document.querySelector("#right #upper-right");
+    upperRight.innerHTML = ""; // Clear previous friend
+    const upperPart1 = document.createElement("div");
+    upperPart1.id = "upper-part1";
+    upperPart1.innerHTML = `
+      <img src="${profileImage}" alt="">
+      <h1>${username}</h1>
+    `;
+    const upperPart2 = document.createElement("div");
+    upperPart2.id = "upper-part2";
+    upperPart2.innerHTML = `
+      <h2><i class="ri-search-line"></i></h2>
+      <h3><i class="ri-more-2-fill"></i></h3>
+    `;
+    upperRight.appendChild(upperPart1);
+    upperRight.appendChild(upperPart2);
+  }
+
+  // Event listener for search input
+  document.querySelector("#left #upper-left input").addEventListener("input", searchUsers);
     </script>
   </body>
 </html>

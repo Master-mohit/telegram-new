@@ -98,20 +98,21 @@ router.post('/addfriend', async function(req, res, next) {
   }
 });
 
-router.get('/setting',async function(req, res, next) {
+router.get('/setting', isLoggedIn, async function(req, res, next) {
  const user = await userModel.findOne({username: req.session.passport.user})
   res.render('setting', {user}); 
 });
 
-router.post('/change',isLoggedIn,async function(req, res, next) {
-  const user = await userModel.findOne({username:req.session.passport.user}) 
-  user.bio= req.body.bio
+router.post('/change',isLoggedIn, upload.single("image"),async function(req, res, next) {
+  const user = await userModel.findOne({username:req.session.passport.user})
+  user.profileImage = req.file.filename
+  user.bio= req.body.about
   user.name =req.body.name
  await user.save();
   res.redirect("/setting")
 });
  
-router.get('/pencil',async function(req, res, next) {
+router.get('/pencil', isLoggedIn,async function(req, res, next) {
   const userr = await userModel.findOne({username: req.session.passport.user})
   res.render('pencil', {userr}); 
 });
@@ -172,7 +173,7 @@ router.post('/srchuser', isLoggedIn, async function(req, res, next) {
 });
 
 
-// Other routes and middleware...
+
 
 module.exports = router;
 

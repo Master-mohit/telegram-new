@@ -220,23 +220,25 @@ html, body{
   color: #fff;
 }
 #box{
-  width: 20vw;
-  height: 20vw;
-  padding: 1vw;
+  width: 80vw;
+  height: 18vw;
+  padding: 1vw ;
   display: none;
   z-index: 9999;
   position: absolute;
   color: #fff;
-
   
 }
 #box-main{
 padding-top: 4vw;
-width: 15vw;
+width: 20vw;
 height: 20vw;
 /* background-color: red;   */
-position: relative;  
+position: relative;
 
+}
+i{
+  padding-left: 2vw;
 }
 #up{
   width: 100%;
