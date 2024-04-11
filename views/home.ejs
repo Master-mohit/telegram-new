@@ -72,18 +72,19 @@
                     </div>
                 </div>
                 <div id="conversation"></div>
+                
                 <div id="btn">
+                  <div class="circle" onclick="openFileOption()">
+                  <input type="file" id="fileInput" style="display:none" accept="image/*" onchange="displaySelectedPhoto(event)">
+                    <i class="ri-upload-2-fill"></i>
+                      </div> 
                     <input type="text" id="messageInput" placeholder="Message">
-                    <div id="uploadContainer"></div>
                     <button onclick="sendMessage()"><i class="ri-send-plane-2-line"></i></button>
-                    <form action="/upload" method="post" enctype="multipart/form-data">
-                        <input type="file" name="photo">
-                        <input type="submit" value="Upload">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+                    </div>        
+            
+         </div>
+           </div>
+           </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
@@ -223,8 +224,44 @@ async function searchUsers() {
     upperRight.appendChild(upperPart2);
   }
 
-  // Event listener for search input
   document.querySelector("#left #upper-left input").addEventListener("input", searchUsers);
+
+  function openFileOption() {
+      document.getElementById('fileInput').click();
+    }
+
+    function displaySelectedPhoto(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          img.style.maxWidth = '100%';
+          img.style.maxHeight = '100%';
+          document.body.appendChild(img);
+        }
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function displaySelectedPhoto(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const thumbnail = document.createElement('img');
+      thumbnail.src = e.target.result;
+      thumbnail.style.width = '100px'; 
+      thumbnail.style.height = 'auto'; 
+      thumbnail.style.marginRight = '10px'; 
+      document.getElementById('conversation').appendChild(thumbnail);
+      sendPhoto(file); 
+    }
+    reader.readAsDataURL(file);
+  }
+}
+
     </script>
   </body>
 </html>

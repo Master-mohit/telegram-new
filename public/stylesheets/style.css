@@ -150,12 +150,14 @@ html, body{
   font-size: 400;
  }
 #btn{
-  gap: 10px;
+  /* gap: 10px; */
   width: 100%;
   max-height: 22vh;
   background-color:#000000;
   display: flex;
   align-items: center;
+ 
+
 }
 #btn input{
   width: 30%;
@@ -165,6 +167,8 @@ html, body{
   border-radius: 10px;
   border: none;
   color: #fff;
+  margin-right: 2vw;
+  
   
 }
 #btn input[type="text"] {
@@ -190,11 +194,16 @@ html, body{
   border: none;
   background-color: #8774e1;
   margin-right: 3vw;
+  overflow: hidden;
   /* padding: 1vw 2vw; */
 }
 #btn button i{
-  font-size: 1.8vw;
+  font-size: 1.6vw;
   color: #e8e2e2;
+  display: flex;
+  align-items: center;
+   margin-right: 4vw;
+  justify-content: center;
 
 }
 #top{
@@ -278,4 +287,27 @@ i{
 }
 #up2 h2{
   font-size: 1.3vw;
+}
+.circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #8774e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  margin-left: 3vw;
+
+}
+
+.circle i{
+padding-right: 2vw;
+font-size: 1.8vw;
+font-weight: 100;
+
+}
+.circle:hover {
+  background-color: #9a89f0b9;
 }

@@ -6,7 +6,10 @@ const passport = require("passport");
 const localStrategy = require("passport-local");
 const http = require('http');
 const socketIo = require('socket.io');
-const upload = require("./multer");
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
+
 
 
 passport.use(new localStrategy(userModel.authenticate()));
@@ -135,26 +138,17 @@ router.post('/photo',isLoggedIn,upload.single("image"), async function(req, res,
   res.redirect("/story")
 });
 
-router.post('/upload', isLoggedIn, upload.single('photo'), async (req, res) => {
+router.post('/uploadPhoto', isLoggedIn, upload.single('photo'), async (req, res) => {
   try {
-    const user = await userModel.findOne({ username: req.session.passport.user});
-
-    if (!Array.isArray(user.posts)) {
-      user.posts = [];
-    }
-
-    const post = await postModel.create({ photo: req.file.filename });
-
-    user.posts.push(post._id);
-
-    await user.save();
+    
     io.emit('newPhoto', { photo: req.file.filename });
-    res.redirect("/home");
+    res.status(200).send('Photo uploaded successfully');
   } catch (error) {
-    console.error('Error uploading post:', error);
+    console.error('Error uploading photo:', error);
     res.status(500).send('Internal Server Error');
   }
 });
+
 
 router.post('/srchuser', isLoggedIn, async function(req, res, next) {
   try {
